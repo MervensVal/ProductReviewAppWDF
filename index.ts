@@ -1,21 +1,26 @@
 var btnSubmit = document.getElementById('submitbtn') as HTMLButtonElement;
 
 var reviewerName = document.getElementById('reviewername')as HTMLInputElement;
-var reviewerNameValue = reviewerName.value;
 
-var comment = document.getElementById('comment') as HTMLTextAreaElement;
-var commentValue = comment.value;
+
+var comment = document.getElementById('comment') as HTMLInputElement;
+
 
 var rating = document.getElementById('rating') as HTMLInputElement;
-var ratingValue = rating.value;
+
 
 var template = document.getElementById('template') as HTMLTemplateElement;
 var resposepoint = document.getElementById('resposepoint');
 
 btnSubmit.addEventListener('click',(event)=> {
+
+    var reviewerNameValue = reviewerName.value;
+    var commentValue = comment.value;
+    var ratingValue = rating.value;
+
     var template = getTemplateClone('template');
     template.content.getElementById('outputname')!.innerText=reviewerNameValue.toString();
-    template.content.getElementById('outputrating')!.innerText=ratingValue;
+    template.content.getElementById('outputrating')!.innerText=ratingValue.toString();
     template.content.getElementById('outputcomment')!.innerText=commentValue.toString();
 
     resposepoint?.appendChild(template.content);

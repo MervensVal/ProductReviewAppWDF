@@ -4,15 +4,24 @@
         <script src=".dist/index.js" defer></script>
     </head>
     <body>
+
+
         <template id="template">
-                Name: <span id="outputname"></span> 
-                <br/>
-                <br/>
-                <span id="outputrating"></span> 
-                <br/>
-                <br/>
-                <textarea name="" id="outputcomment" cols="40" rows="5" readonly></textarea>
+            <table id='outputreviewtable' width="100%">
+                <tr>
+                    <td>Name: <span id="outputname"></span> </td>
+                </tr>
+                <tr>
+                    <td>Comment: <span id="outputcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Rating: <span id="outputrating"></span></td>
+                </tr>
+            </table>
+                <hr>
         </template>
+
+
         <div class="topcontainer">
             <img src="images/noke shoes.jpg" alt="nike shoes" id="shoeimage">
             <h1 id="title">Nike Air Max Shoes</h1>
@@ -25,22 +34,25 @@
                 <h4 id="averageLable">Average Rating: <span id="average"></h4>
             </div>
         </div>
+
+
         <br/>
         <hr>
-        <table id="reviewtable">
+        <table id="reviewtable" width="100%">
             <tr>
-                <td>Name: </br><input type="text" id="reviewername" width="100%"></td>
+                <td>Name: </br>
+                <input type="text" id="reviewername" width="100%"></td>
             </tr>
             <tr>
                 <td>
                     Comment: <br/>
-                    <textarea name="" id="comment" cols="40" rows="5" placeholder="Add a Comment" maxlength="100"></textarea>
+                    <input type="text" id="comment" width="100%"></td>
                 </td>
             </tr>
             <tr>
                 <td>
                     Rating: <br/>
-                    <input type="number" id="rating">
+                    <input type="number" id="rating" min="1" max="5">
                 </td>
             </tr>
             <tr>
@@ -50,9 +62,7 @@
                 </td>
             </tr>
         </table>
-        <hr/>
-        <div id="resposepoint">
-
-        </div>
+        <hr>
+        <div id="resposepoint"></div>
     </body>
 </html>
